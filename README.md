@@ -1,143 +1,57 @@
-GitHub API Tests
-Add collection description…
-Authorization
-Basic Auth
-Username
-<username>
+# Postman Tests for GitHub API
 
-Password
-<password>
+This repository contains a collection of Postman tests for various GitHub API endpoints. These tests can be used to interact with GitHub's API and perform actions such as retrieving user information, creating repositories, managing files, and more. The tests are organized into folders based on the API endpoints they target.
 
-GET
-Home page
-https://github.com/
-Add request description…
-Authorization
-API Key
-GET
-User info
-https://api.github.com/users/:owner
-Add request description…
-Authorization
-Basic Auth
-This request is using an authorization helper from collection GitHub API Tests
-Path Variables
-owner
-krabuk97
+## Getting Started
 
-GET
-List of repo
-https://api.github.com/user/repos
-Add request description…
-Authorization
-Basic Auth
-This request is using an authorization helper from collection GitHub API Tests
-POST
-Create repo
-https://api.github.com/user/repos
-Add request description…
-Authorization
-Basic Auth
-This request is using an authorization helper from collection GitHub API Tests
-Body
-raw (text)
-text
-{
-    "name": "Test_GitHub_Api_Postman"
-}
-PUT
-Add simple file
-https://api.github.com/repos/krabuk97/Test_GitHub_Api_Postman/contents/tst.txt
-Add request description…
-Authorization
-Basic Auth
-This request is using an authorization helper from collection GitHub API Tests
-Body
-raw (json)
-json
-{
-  "message": "add new file",
-  "content": "test"
-}
-PATCH
-Update repo
-https://api.github.com/repos/:owner/:repo
-Add request description…
-Authorization
-Basic Auth
-This request is using an authorization helper from collection GitHub API Tests
-Path Variables
-owner
-krabuk97
+To get started with these tests, follow the steps below:
 
-repo
-Test_GitHub_Api_Postman
+1. Install Postman: If you haven't already, download and install [Postman](https://www.postman.com/downloads/).
 
-Body
-raw (json)
-json
-{
-    "name": "updated-with-api1"
-}
-GET
-File info
-https://api.github.com/repos/krabuk97/updated-with-api1/contents/tst.txt
-Add request description…
-Authorization
-Basic Auth
-This request is using an authorization helper from collection GitHub API Tests
-DELETE
-Delete file
-https://api.github.com/repos/krabuk97/updated-with-api1/contents/tst.txt
-Add request description…
-Authorization
-Basic Auth
-This request is using an authorization helper from collection GitHub API Tests
-Body
-raw (json)
-json
-{
-  "message": "add new file",
-  "content": "test",
-  "sha": "e4d3ec48b1faa2789c9db6c443e9774beb26d240"
-}
-PATCH
-Update repo 1.0
-https://api.github.com/repos/:owner/:repo
-Add request description…
-Authorization
-Basic Auth
-This request is using an authorization helper from collection GitHub API Tests
-Path Variables
-owner
-krabuk97
+2. Import the Collection: In Postman, click on the **Import** button and select the `github-api-tests.postman_collection.json` file from this repository.
 
-repo
-Test_GitHub_Api_Postman
+3. Set Environment Variables: Before running the tests, make sure to set the necessary environment variables such as `base_url`, `access_token`, and any other variables required for authentication.
 
-Body
-raw (json)
-json
-{
-    "name": "Test_APi_GitHub_Postman"
-}
-DELETE
-Delete repo
-https://api.github.com/repos/:owner/:repo
-Add request description…
-Authorization
-Basic Auth
-This request is using an authorization helper from collection GitHub API Tests
-Path Variables
-owner
-krabuk97
+4. Run the Tests: Once the environment variables are set, you can run the tests by selecting the desired request and clicking on the **Send** button.
 
-repo
-Test_GitHub_Api_Postman
+## List of Available Tests
 
-Body
-raw (json)
-json
-{
-    "name": "updated-with-api1"
-}
+### Home Page
+- **GET** - Retrieve the home page of GitHub.
+
+### User Info
+- **GET** - Get information about a specific user.
+
+### List of Repositories
+- **GET** - Retrieve a list of repositories for a user.
+
+### Create Repository
+- **POST** - Create a new repository.
+
+### Add Simple File
+- **PUT** - Add a simple file to a repository.
+
+### Update Repository
+- **PATCH** - Update a repository.
+
+### File Info
+- **GET** - Get information about a specific file.
+
+### Delete File
+- **DELETE** - Delete a file from a repository.
+
+### Update Repository 1.0
+- **PATCH** - Update a repository to version 1.0.
+
+### Delete Repository
+- **DELETE** - Delete a repository.
+
+Please note that these tests assume you have a valid access token with the necessary permissions to perform the respective actions on the GitHub API.
+
+## Contributing
+
+If you would like to contribute to this collection of tests, feel free to submit a pull request with your changes. Contributions are always welcome!
+
+## License
+
+This repository is licensed under the [MIT License](LICENSE). Feel free to use and modify the tests as per your needs.
